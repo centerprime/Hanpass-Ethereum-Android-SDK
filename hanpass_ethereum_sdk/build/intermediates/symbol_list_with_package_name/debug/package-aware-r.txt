@@ -1,0 +1,1 @@
+com.centerprime.hanpass_ethereum_sdk

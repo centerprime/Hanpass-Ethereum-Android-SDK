@@ -1,0 +1,3 @@
+include ':hanpass_ethereum_sdk'
+include ':app'
+rootProject.name = "HanpassEthereum"
