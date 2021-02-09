@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/nizomjonhajiev/AndroidStudioProjects/HanpassEthereum/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "/Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/Users/nizomjonhajiev/.gradle/caches/transforms-2/files-2.1/ff19cd21bc28a503476b6dbfb05a4f81/appcompat-v7-28.0.0/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "source": "/Users/ergashev/.gradle/caches/transforms-2/files-2.1/7f3fa8d587d4363e1ca9ee9b95b784e2/appcompat-v7-28.0.0/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
