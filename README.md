@@ -10,8 +10,12 @@
   - [Create Wallet](#create-wallet)
   - [Import Wallet By Keystore](#import-wallet-by-keystore)
   - [Import Wallet By Private Key](#import-wallet-by-private-key)
+  - [Export Keystore](#export-keystore)
+  - [Export Private Key](#export-private-key)
   - [Ethereum Balance](#ethereum-balance)
+  - [ERC20 token balance](#erc20-token-balance)
   - [Send Ether](#send-ether)
+  - [Send ERC20 Token](#send-erc20-token)
 
 
 ## Getting Started
@@ -40,7 +44,7 @@ For “Gradle” add this dependency to your module:
 
 ```groovy
 dependencies {
-    implementation 'com.github.centerprime:Hanpass-Ethereum-SDK:1.0.0'
+    implementation 'com.github.centerprime:Hanpass-Ethereum-SDK:1.0.1'
 }
 ```
 
@@ -137,6 +141,45 @@ ethManager.importFromPrivateKey(privateKey, this)
 
                 });
 ```
+### Export Keystore
+
+> If you want to export wallet address’s keystore you can use a code written below.
+
+```java
+EthManager ethManager = EthManager.getInstance();
+String walletAddress = "WALLET_ADDRESS";
+ethManager.getKeyStore(walletAddress, this)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(keystore -> {
+
+                    Toast.makeText(this, "Keystore : " + keystore, Toast.LENGTH_SHORT).show();
+
+                }, error -> {
+
+                });
+```
+
+### Export Private Key
+
+> If you want to export wallet address’s private key you can use a code written below.
+
+```java
+EthManager ethManager = EthManager.getInstance();
+String walletAddress = "WALLET_ADDRESS";
+String password = "WALLET_PASSWORD";
+ethManager.exportPrivateKey(walletAddress, password,this)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(privatekey -> {
+
+                    Toast.makeText(this, "Private Key : " + privatekey, Toast.LENGTH_SHORT).show();
+
+                }, error -> {
+
+                });
+```
+
 ### Ethereum Balance
 
 > To get balance of Ethereum wallet address you can use this code.
@@ -150,6 +193,26 @@ ethManager.balanceInEth(walletAddress)
                 .subscribe(balance -> {
 
                     Toast.makeText(this, "Eth Balance : " + balance, Toast.LENGTH_SHORT).show();
+
+                }, error -> {
+
+                });
+```
+### ERC20 token balance
+
+> To get balance of ERC20 token you can use this code. 
+
+```java
+EthManager ethManager = EthManager.getInstance();
+String walletAddress = "WALLET_ADDRESS";
+String password = "WALLET_PASSWORD";
+String erc20TokenContractAddress = "ERC_20_TOKEN_CONTRACT_ADDRESS";
+ethManager.getTokenBalance(walletAddress, password, erc20TokenContractAddress, this)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(balance -> {
+
+                    Toast.makeText(this, "Token Balance : " + balance, Toast.LENGTH_SHORT).show();
 
                 }, error -> {
 
@@ -169,6 +232,30 @@ BigInteger gasLimit = new BigInteger("GAS_LIMIT");
 BigDecimal etherAmount = new BigDecimal("ETHER_AMOUNT");
 String receiverAddress = "RECEIVER_WALLET_ADDRESS";
 ethManager.sendEther(walletAddress, password,gasPrice,gasLimit,etherAmount, receiverAddress, this)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(tx -> {
+
+                    Toast.makeText(this, "TX : " + tx, Toast.LENGTH_SHORT).show();
+
+                }, error -> {
+
+                });
+```
+### Send ERC20 token
+
+> To send ERC20 Token to another wallet address you can use this code.
+
+```java
+EthManager ethManager = EthManager.getInstance();
+String walletAddress = "WALLET_ADDRESS";
+String password = "WALLET_PASSWORD";
+BigInteger gasPrice = new BigInteger("GAS_PRICE");
+BigInteger gasLimit = new BigInteger("GAS_LIMIT");
+BigDecimal tokenAmount = new BigDecimal("TOKEN_AMOUNT");
+String receiverAddress = "RECEIVER_WALLET_ADDRESS";
+String erc20TokenContractAddress = "ERC20_TOKEN_CONTRACT_ADDRESS";
+ethManager.sendToken(walletAddress, password, gasPrice, gasLimit, tokenAmount, receiverAddress, erc20TokenContractAddress, this)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(tx -> {
