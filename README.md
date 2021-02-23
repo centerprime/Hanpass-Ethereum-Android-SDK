@@ -35,7 +35,7 @@ For “Maven” add this dependency to your module:
 ```xml
 <dependency>
 	    <groupId>com.github.centerprime</groupId>
-	    <artifactId>Hanpass-Ethereum-SDK</artifactId>
+	    <artifactId>Hanpass-Ethereum-Android-SDK</artifactId>
 	    <version>1.0.1</version>
 </dependency>
 ```
@@ -44,7 +44,7 @@ For “Gradle” add this dependency to your module:
 
 ```groovy
 dependencies {
-    implementation 'com.github.centerprime:Hanpass-Ethereum-SDK:1.0.1'
+    implementation 'com.github.centerprime:Hanpass-Ethereum-Android-SDK:1.0.1'
 }
 ```
 
