@@ -374,17 +374,20 @@ public class EthManager {
                     Erc20TokenWrapper contract = Erc20TokenWrapper.load(tokenContractAddress, web3j,
                             transactionManager, BigInteger.ZERO, BigInteger.ZERO);
                     Address address = new Address(walletAddress);
-                    Uint256 tokenBalance = contract.balanceOf(address);
+                    BigInteger tokenBalance = contract.balanceOf(address).getValue();
+                    BigInteger decimalCount = contract.decimals().getValue();
+
+                    BigDecimal tokenValueByDecimals = BalanceUtils.balanceByDecimal(tokenBalance, decimalCount);
 
                     HashMap<String, Object> body = new HashMap<>();
                     body.put("action_type", "TOKEN_BALANCE");
                     body.put("wallet_address", walletAddress);
-                    body.put("balance", BalanceUtils.weiToEth(tokenBalance.getValue()));
+                    body.put("balance", tokenValueByDecimals.doubleValue());
                     body.put("network" , isMainNet() ? "MAINNET" : "TESTNET");
                     sendEventToLedger(body, context);
 
 
-                    return Single.just(BalanceUtils.weiToEth(tokenBalance.getValue()));
+                    return Single.just(tokenValueByDecimals);
                 });
     }
 
@@ -442,13 +445,15 @@ public class EthManager {
                                     Context context) {
         return loadCredentials(walletAddress, password, context)
                 .flatMap(credentials -> {
-                    BigDecimal formattedAmount = BalanceUtils.ethToWei(tokenAmount);
                     TransactionReceiptProcessor transactionReceiptProcessor = new NoOpProcessor(web3j);
                     TransactionManager transactionManager = new RawTransactionManager(
                             web3j, credentials, isMainNet() ? ChainId.MAINNET : ChainId.ROPSTEN, transactionReceiptProcessor);
                     Erc20TokenWrapper contract = Erc20TokenWrapper.load(tokenContractAddress, web3j, transactionManager, gasPrice, gasLimit);
-                    TransactionReceipt mReceipt = contract.transfer(new Address(to_Address), new Uint256(formattedAmount.toBigInteger()));
 
+                    BigInteger decimalCount = contract.decimals().getValue();
+
+                    BigDecimal formattedAmount = BalanceUtils.amountByDecimal(tokenAmount, new BigDecimal(decimalCount));
+                    TransactionReceipt mReceipt = contract.transfer(new Address(to_Address), new Uint256(formattedAmount.toBigInteger()));
 
                     HashMap<String, Object> body = new HashMap<>();
                     body.put("action_type", "SEND_TOKEN");
@@ -460,9 +465,8 @@ public class EthManager {
                     body.put("gasPrice", gasPrice.toString());
                     body.put("fee", gasLimit.multiply(gasPrice).toString());
                     body.put("token_smart_contract", tokenContractAddress);
+                    body.put("network", isMainNet() ? "MAINNET" : "TESTNET");
                     body.put("status", "SUCCESS");
-                    body.put("network" , isMainNet() ? "MAINNET" : "TESTNET");
-
 
                     sendEventToLedger(body, context);
 

@@ -76,4 +76,23 @@ public class BalanceUtils {
         }
     }
 
+    /**
+     * Balance by decimals
+     */
+    public static BigDecimal balanceByDecimal(BigInteger balance, BigInteger decimals) {
+        BigDecimal tokenDecimals = new BigDecimal(Math.pow(10, decimals.intValue()));
+        BigDecimal convertBalance = new BigDecimal(balance);
+        return convertBalance.divide(tokenDecimals);
+    }
+
+    /**
+     * Amount by decimals
+     */
+    public static BigDecimal amountByDecimal(BigDecimal amount, BigDecimal decimals) {
+        int convertDecimals = decimals.intValue();
+        BigDecimal tokenDecimals = new BigDecimal("10");
+        tokenDecimals = tokenDecimals.pow(convertDecimals);
+        return amount.multiply(tokenDecimals);
+    }
+
 }
