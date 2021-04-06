@@ -1,4 +1,4 @@
-com/centerprime/hanpassethereum/MainActivity.java
- com.centerprime.hanpassethereum.MainActivity
 com/centerprime/hanpassethereum/BuildConfig.java
  com.centerprime.hanpassethereum.BuildConfig
+com/centerprime/hanpassethereum/MainActivity.java
+ com.centerprime.hanpassethereum.MainActivity

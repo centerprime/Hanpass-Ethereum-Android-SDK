@@ -6,8 +6,8 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="23"
-8-->/Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+8-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="28" />
-9-->/Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+9-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
 10
 11</manifest>

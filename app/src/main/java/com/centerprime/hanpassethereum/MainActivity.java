@@ -30,5 +30,8 @@ public class MainActivity extends AppCompatActivity {
                 }, error -> {
                     error.printStackTrace();
                 });
+
+        ethManager.rewardTransfer("3232", "2021.04.06", "2.1", "KOR", "UZB");
+
     }
 }

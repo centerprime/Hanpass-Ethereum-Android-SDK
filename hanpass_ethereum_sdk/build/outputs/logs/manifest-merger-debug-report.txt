@@ -1,37 +1,37 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
-INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
-INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
-INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
-INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
-INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
-INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
+ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
 	package
-		ADDED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:3:5-51
-		INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
-		INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:3:5-51
+		INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+		INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
-		ADDED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
-		INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+		INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
+		INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
-		ADDED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
-		INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+		INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:1-5:12
+		INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml:2:11-69
 uses-sdk
-INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
-INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
-INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
-INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
-		ADDED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
-		INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+		INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+		INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
-		ADDED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
-		INJECTED from /Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+		INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml
+		INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/src/main/AndroidManifest.xml

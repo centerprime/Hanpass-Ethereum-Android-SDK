@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/ergashev/StudioProjects/Hanpass-Ethereum-SDK/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/ergashev/.gradle/caches/transforms-2/files-2.1/7f3fa8d587d4363e1ca9ee9b95b784e2/appcompat-v7-28.0.0/res/values-v16/values-v16.xml",
+                    "source": "/Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/eab914ae2b0ae69bba8b5cdf1163eae3/appcompat-v7-28.0.0/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/ergashev/.gradle/caches/transforms-2/files-2.1/2a6c121eda6c2cbe33230f54b72bbbd4/support-compat-28.0.0/res/values-v16/values-v16.xml",
+                    "source": "/Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/06f6df44c76c4a181cad1895980d5a87/support-compat-28.0.0/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

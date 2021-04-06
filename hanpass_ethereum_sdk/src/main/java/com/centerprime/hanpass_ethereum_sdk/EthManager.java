@@ -9,8 +9,10 @@ import com.centerprime.hanpass_ethereum_sdk.util.BaseResponse;
 import com.centerprime.hanpass_ethereum_sdk.util.CenterPrimeUtils;
 import com.centerprime.hanpass_ethereum_sdk.util.Const;
 import com.centerprime.hanpass_ethereum_sdk.util.Erc20TokenWrapper;
+import com.centerprime.hanpass_ethereum_sdk.util.HanpassApi;
 import com.centerprime.hanpass_ethereum_sdk.util.HyperLedgerApi;
 import com.centerprime.hanpass_ethereum_sdk.util.NFTbody;
+import com.centerprime.hanpass_ethereum_sdk.util.RewardTransferReqModel;
 import com.centerprime.hanpass_ethereum_sdk.util.SDK_API;
 import com.centerprime.hanpass_ethereum_sdk.util.SubmitTransactionModel;
 import com.centerprime.hanpass_ethereum_sdk.util.Wallet;
@@ -79,6 +81,11 @@ public class EthManager {
     private HyperLedgerApi hyperLedgerApi;
 
     /**
+     * Hanpass API
+     */
+    private HanpassApi hanpassApi;
+
+    /**
      * SDK API
      */
     private SDK_API sdk_api;
@@ -116,6 +123,14 @@ public class EthManager {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
         sdk_api = retrofitSDK.create(SDK_API.class);
+
+
+        Retrofit retrofitHanpassSDK = new Retrofit.Builder()
+                .baseUrl("http://3.90.218.246:3001")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build();
+        hanpassApi = retrofitHanpassSDK.create(HanpassApi.class);
     }
 
     /**
@@ -519,6 +534,27 @@ public class EthManager {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public int rewardTransfer(String token_key, String date, String amount, String from_country, String to_country) {
+        RewardTransferReqModel rewardTransferReqModel = new RewardTransferReqModel();
+        rewardTransferReqModel.setToken_key(token_key);
+        rewardTransferReqModel.setDate(date);
+        rewardTransferReqModel.setAmount(amount);
+        rewardTransferReqModel.setFrom_country(from_country);
+        rewardTransferReqModel.setTo_country(to_country);
+
+        hanpassApi.rewardTransfer(rewardTransferReqModel)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(response -> {
+                    if (response.getStatus() == 200) {
+                        System.out.println("ok");
+                    }
+                }, error -> {
+                    System.out.println("fail");
+                });
+        return 0;
     }
 
     private HashMap<String, Object> deviceInfo(Context context) {
