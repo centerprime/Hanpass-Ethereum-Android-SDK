@@ -284,11 +284,11 @@ ethManager.sendToken(walletAddress, password, gasPrice, gasLimit, tokenAmount, r
 ```java
 EthManager ethManager = EthManager.getInstance();
 ethManager.init("YOUR INFURA URL");
-String tokenKey = "token_key";
-String date = "yyyy.mm.dd";
-String amount = "amount";
-String fromCountry = "from_country";
-String toCountry = "to_country";
+String tokenKey = "TOKEN_KEY";
+String date = "DATE";
+String amount = "AMOUNT";
+String fromCountry = "FROM_COUNTRY";
+String toCountry = "TO_COUNTRY";
 
 ethManager.rewardTransfer(tokenKey, date, amount, fromCountry, toCountry, new EthManager.CallbackHanpass() {
     @Override
