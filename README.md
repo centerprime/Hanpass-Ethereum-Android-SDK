@@ -16,6 +16,7 @@
   - [ERC20 token balance](#erc20-token-balance)
   - [Send Ether](#send-ether)
   - [Send ERC20 Token](#send-erc20-token)
+  - [Reward Transfer](#reward-transfer)
 
 
 ## Getting Started
@@ -275,4 +276,26 @@ ethManager.sendToken(walletAddress, password, gasPrice, gasLimit, tokenAmount, r
                 }, error -> {
 
                 });
+```
+
+### Reward Transfer
+> 
+
+```java
+EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
+String tokenKey = "token_key";
+String date = "yyyy.mm.dd";
+String amount = "amount";
+String fromCountry = "from_country";
+String toCountry = "to_country";
+
+ethManager.rewardTransfer(tokenKey, date, amount, fromCountry, toCountry, new EthManager.CallbackHanpass() {
+    @Override
+    public void result(String result) {
+        // if function is success result will be "tx_hash" 
+	// if function is fail result will contain error msg
+        System.out.println(result);
+    }
+});
 ```
