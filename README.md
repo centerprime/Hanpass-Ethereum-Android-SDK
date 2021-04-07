@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         EthManager ethManager = EthManager.getInstance();
+	ethManager.init("YOUR INFURA URL");
 
         String password = "xxxx12345";
 
@@ -93,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
 > You can create Ethereum Wallet.
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String password = "xxxx12345";
 ethManager.createWallet(password, this)
                 .subscribeOn(Schedulers.io())
@@ -110,6 +112,7 @@ ethManager.createWallet(password, this)
 
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String password = "xxxx12345";
 String keystore = "JSON_FORMAT";
 ethManager.importFromKeystore(keystore, password, this)
@@ -129,6 +132,7 @@ ethManager.importFromKeystore(keystore, password, this)
 
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String privateKey = "PRIVATE_KEY";
 ethManager.importFromPrivateKey(privateKey, this)
                 .subscribeOn(Schedulers.io())
@@ -147,6 +151,7 @@ ethManager.importFromPrivateKey(privateKey, this)
 
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String walletAddress = "WALLET_ADDRESS";
 ethManager.getKeyStore(walletAddress, this)
                 .subscribeOn(Schedulers.io())
@@ -166,6 +171,7 @@ ethManager.getKeyStore(walletAddress, this)
 
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String walletAddress = "WALLET_ADDRESS";
 String password = "WALLET_PASSWORD";
 ethManager.exportPrivateKey(walletAddress, password,this)
@@ -186,6 +192,7 @@ ethManager.exportPrivateKey(walletAddress, password,this)
 
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String walletAddress = "WALLET_ADDRESS";
 ethManager.balanceInEth(walletAddress)
                 .subscribeOn(Schedulers.io())
@@ -204,6 +211,7 @@ ethManager.balanceInEth(walletAddress)
 
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String walletAddress = "WALLET_ADDRESS";
 String password = "WALLET_PASSWORD";
 String erc20TokenContractAddress = "ERC_20_TOKEN_CONTRACT_ADDRESS";
@@ -225,6 +233,7 @@ ethManager.getTokenBalance(walletAddress, password, erc20TokenContractAddress, t
 
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String walletAddress = "WALLET_ADDRESS";
 String password = "WALLET_PASSWORD";
 BigInteger gasPrice = new BigInteger("GAS_PRICE");
@@ -248,6 +257,7 @@ ethManager.sendEther(walletAddress, password,gasPrice,gasLimit,etherAmount, rece
 
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String walletAddress = "WALLET_ADDRESS";
 String password = "WALLET_PASSWORD";
 BigInteger gasPrice = new BigInteger("GAS_PRICE");
