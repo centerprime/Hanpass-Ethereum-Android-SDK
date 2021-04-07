@@ -16,6 +16,7 @@
   - [ERC20 token balance](#erc20-token-balance)
   - [Send Ether](#send-ether)
   - [Send ERC20 Token](#send-erc20-token)
+  - [Reward Transfer](#reward-transfer)
 
 
 ## Getting Started
@@ -36,7 +37,7 @@ For “Maven” add this dependency to your module:
 <dependency>
 	    <groupId>com.github.centerprime</groupId>
 	    <artifactId>Hanpass-Ethereum-Android-SDK</artifactId>
-	    <version>1.0.3</version>
+	    <version>1.0.4</version>
 </dependency>
 ```
 
@@ -44,7 +45,7 @@ For “Gradle” add this dependency to your module:
 
 ```groovy
 dependencies {
-    implementation 'com.github.centerprime:Hanpass-Ethereum-Android-SDK:1.0.3'
+    implementation 'com.github.centerprime:Hanpass-Ethereum-Android-SDK:1.0.4'
 }
 ```
 
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         EthManager ethManager = EthManager.getInstance();
+	ethManager.init("YOUR INFURA URL");
 
         String password = "xxxx12345";
 
@@ -93,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
 > You can create Ethereum Wallet.
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String password = "xxxx12345";
 ethManager.createWallet(password, this)
                 .subscribeOn(Schedulers.io())
@@ -110,6 +113,7 @@ ethManager.createWallet(password, this)
 
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String password = "xxxx12345";
 String keystore = "JSON_FORMAT";
 ethManager.importFromKeystore(keystore, password, this)
@@ -129,6 +133,7 @@ ethManager.importFromKeystore(keystore, password, this)
 
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String privateKey = "PRIVATE_KEY";
 ethManager.importFromPrivateKey(privateKey, this)
                 .subscribeOn(Schedulers.io())
@@ -147,6 +152,7 @@ ethManager.importFromPrivateKey(privateKey, this)
 
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String walletAddress = "WALLET_ADDRESS";
 ethManager.getKeyStore(walletAddress, this)
                 .subscribeOn(Schedulers.io())
@@ -166,6 +172,7 @@ ethManager.getKeyStore(walletAddress, this)
 
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String walletAddress = "WALLET_ADDRESS";
 String password = "WALLET_PASSWORD";
 ethManager.exportPrivateKey(walletAddress, password,this)
@@ -186,6 +193,7 @@ ethManager.exportPrivateKey(walletAddress, password,this)
 
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String walletAddress = "WALLET_ADDRESS";
 ethManager.balanceInEth(walletAddress)
                 .subscribeOn(Schedulers.io())
@@ -204,6 +212,7 @@ ethManager.balanceInEth(walletAddress)
 
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String walletAddress = "WALLET_ADDRESS";
 String password = "WALLET_PASSWORD";
 String erc20TokenContractAddress = "ERC_20_TOKEN_CONTRACT_ADDRESS";
@@ -225,6 +234,7 @@ ethManager.getTokenBalance(walletAddress, password, erc20TokenContractAddress, t
 
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String walletAddress = "WALLET_ADDRESS";
 String password = "WALLET_PASSWORD";
 BigInteger gasPrice = new BigInteger("GAS_PRICE");
@@ -248,6 +258,7 @@ ethManager.sendEther(walletAddress, password,gasPrice,gasLimit,etherAmount, rece
 
 ```java
 EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
 String walletAddress = "WALLET_ADDRESS";
 String password = "WALLET_PASSWORD";
 BigInteger gasPrice = new BigInteger("GAS_PRICE");
@@ -265,4 +276,26 @@ ethManager.sendToken(walletAddress, password, gasPrice, gasLimit, tokenAmount, r
                 }, error -> {
 
                 });
+```
+
+### Reward Transfer
+> To send crypto coins as a reward you can use this code.
+
+```java
+EthManager ethManager = EthManager.getInstance();
+ethManager.init("YOUR INFURA URL");
+String tokenKey = "TOKEN_KEY";
+String date = "DATE";
+String amount = "AMOUNT";
+String fromCountry = "FROM_COUNTRY";
+String toCountry = "TO_COUNTRY";
+
+ethManager.rewardTransfer(tokenKey, date, amount, fromCountry, toCountry, new EthManager.CallbackHanpass() {
+    @Override
+    public void result(String result) {
+        // if function is success result will be "tx_hash" 
+	// if function is fail result will contain error msg
+        System.out.println(result);
+    }
+});
 ```
