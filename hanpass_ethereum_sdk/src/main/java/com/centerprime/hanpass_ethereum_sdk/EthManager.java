@@ -13,6 +13,7 @@ import com.centerprime.hanpass_ethereum_sdk.util.HanpassApi;
 import com.centerprime.hanpass_ethereum_sdk.util.HyperLedgerApi;
 import com.centerprime.hanpass_ethereum_sdk.util.NFTbody;
 import com.centerprime.hanpass_ethereum_sdk.util.RewardTransferReqModel;
+import com.centerprime.hanpass_ethereum_sdk.util.RewardTransferResponseModel;
 import com.centerprime.hanpass_ethereum_sdk.util.SDK_API;
 import com.centerprime.hanpass_ethereum_sdk.util.SubmitTransactionModel;
 import com.centerprime.hanpass_ethereum_sdk.util.Wallet;
@@ -54,10 +55,12 @@ import java.security.InvalidAlgorithmParameterException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -124,9 +127,14 @@ public class EthManager {
                 .build();
         sdk_api = retrofitSDK.create(SDK_API.class);
 
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(60, TimeUnit.SECONDS)
+                .readTimeout(60, TimeUnit.SECONDS)
+                .build();
 
         Retrofit retrofitHanpassSDK = new Retrofit.Builder()
                 .baseUrl("http://3.90.218.246:3001")
+                .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
@@ -178,7 +186,7 @@ public class EthManager {
                         .subscribe(res -> {
                             System.out.println(res);
 
-                            LinkedTreeMap<String,Object> map = (LinkedTreeMap<String, Object>) res.getData();
+                            LinkedTreeMap<String, Object> map = (LinkedTreeMap<String, Object>) res.getData();
 
                             String txHash = (String) map.get("tx_hash");
                             String tokenId = String.valueOf(map.get("token_id"));
@@ -270,7 +278,7 @@ public class EthManager {
     public Single<String> importFromKeystore(String keystore, String password, Context context) {
         return Single.fromCallable(() -> {
             HashMap<String, Object> body = new HashMap<>();
-            body.put("network" , isMainNet() ? "MAINNET" : "TESTNET");
+            body.put("network", isMainNet() ? "MAINNET" : "TESTNET");
             try {
                 Credentials credentials = CenterPrimeUtils.loadCredentials(password, keystore);
                 String walletAddress = CenterPrimeUtils.generateWalletFile(password, credentials.getEcKeyPair(), new File(context.getFilesDir(), ""), false);
@@ -295,7 +303,7 @@ public class EthManager {
     public Single<String> importFromPrivateKey(String privateKey, Context context) {
         return Single.fromCallable(() -> {
             HashMap<String, Object> body = new HashMap<>();
-            body.put("network" , isMainNet() ? "MAINNET" : "TESTNET");
+            body.put("network", isMainNet() ? "MAINNET" : "TESTNET");
             String password = "HANPASS";
             // Decode private key
             ECKeyPair keys = ECKeyPair.create(Hex.decode(privateKey));
@@ -346,7 +354,7 @@ public class EthManager {
 
             HashMap<String, Object> body = new HashMap<>();
             body.put("action_type", "COIN_BALANCE");
-            body.put("network" , isMainNet() ? "MAINNET" : "TESTNET");
+            body.put("network", isMainNet() ? "MAINNET" : "TESTNET");
             body.put("wallet_address", address);
             body.put("balance", BalanceUtils.weiToEth(valueInWei));
             body.put("status", "SUCCESS");
@@ -398,7 +406,7 @@ public class EthManager {
                     body.put("action_type", "TOKEN_BALANCE");
                     body.put("wallet_address", walletAddress);
                     body.put("balance", tokenValueByDecimals.doubleValue());
-                    body.put("network" , isMainNet() ? "MAINNET" : "TESTNET");
+                    body.put("network", isMainNet() ? "MAINNET" : "TESTNET");
                     sendEventToLedger(body, context);
 
 
@@ -441,7 +449,7 @@ public class EthManager {
                     body.put("gasPrice", gasPrice.toString());
                     body.put("fee", gasLimit.multiply(gasPrice).toString());
                     body.put("status", "SUCCESS");
-                    body.put("network" , isMainNet() ? "MAINNET" : "TESTNET");
+                    body.put("network", isMainNet() ? "MAINNET" : "TESTNET");
                     sendEventToLedger(body, context);
 
                     return Single.just(transactionHash);
@@ -536,7 +544,20 @@ public class EthManager {
         }
     }
 
-    public int rewardTransfer(String token_key, String date, String amount, String from_country, String to_country) {
+    private String rewardTransferResult = "";
+
+
+    /**
+     * reward transfer
+     */
+    public void rewardTransfer(String token_key,
+                               String date,
+                               String amount,
+                               String from_country,
+                               String to_country,
+                               CallbackHanpass callbackHanpass) {
+
+
         RewardTransferReqModel rewardTransferReqModel = new RewardTransferReqModel();
         rewardTransferReqModel.setToken_key(token_key);
         rewardTransferReqModel.setDate(date);
@@ -549,12 +570,22 @@ public class EthManager {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(response -> {
                     if (response.getStatus() == 200) {
-                        System.out.println("ok");
+                        System.out.println(response.getData().getTx_hash());
+                        rewardTransferResult = response.getData().getTx_hash();
+                        System.out.println(response.getStatus() + " status_code");
+
+                        callbackHanpass.result(response.getData().getTx_hash());
+                    }
+                    else {
+                        callbackHanpass.result(response.getMessage());
                     }
                 }, error -> {
-                    System.out.println("fail");
+                    callbackHanpass.result(error.getMessage());
+                    rewardTransferResult = error.getMessage();
+                    System.out.println(rewardTransferResult);
                 });
-        return 0;
+
+
     }
 
     private HashMap<String, Object> deviceInfo(Context context) {
@@ -586,9 +617,11 @@ public class EthManager {
 
     }
 
-
     public interface Callback<T> {
         void response(BaseResponse<T> res);
     }
 
+    public interface CallbackHanpass {
+        void result(String result);
+    }
 }
