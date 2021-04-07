@@ -279,7 +279,7 @@ ethManager.sendToken(walletAddress, password, gasPrice, gasLimit, tokenAmount, r
 ```
 
 ### Reward Transfer
-> 
+> To send crypto coins as a reward you can use this code.
 
 ```java
 EthManager ethManager = EthManager.getInstance();
