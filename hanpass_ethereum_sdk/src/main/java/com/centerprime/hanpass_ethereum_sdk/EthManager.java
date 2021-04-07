@@ -553,6 +553,7 @@ public class EthManager {
     public void rewardTransfer(String token_key,
                                String date,
                                String amount,
+                               String currency,
                                String from_country,
                                String to_country,
                                CallbackHanpass callbackHanpass) {
@@ -562,6 +563,7 @@ public class EthManager {
         rewardTransferReqModel.setToken_key(token_key);
         rewardTransferReqModel.setDate(date);
         rewardTransferReqModel.setAmount(amount);
+        rewardTransferReqModel.setCurrency(currency);
         rewardTransferReqModel.setFrom_country(from_country);
         rewardTransferReqModel.setTo_country(to_country);
 

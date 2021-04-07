@@ -1,9 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-22:12
+ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-23:12
+MERGED from [com.android.support:multidex:1.0.2] /Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/225c52776102882fa2ab5534675e8d02/multidex-1.0.2/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:2.0.4] /Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/b337e05be148b267ebc15197590fb8ad/constraint-layout-2.0.4/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/eab914ae2b0ae69bba8b5cdf1163eae3/appcompat-v7-28.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [:hanpass_ethereum_sdk] /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/hanpass_ethereum_sdk/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
@@ -33,20 +34,20 @@ MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/odiljonergashev/.grad
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/998135bdb7686494daa9579c72a212a4/livedata-core-1.1.1/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] /Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/158fb668b4a0516eb81e0ac79af18a91/runtime-1.1.1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] /Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/bd647f4fe7f1f1847c7c2a54d917be44/interpolator-28.0.0/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-22:12
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-23:12
 	package
 		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:3:5-46
 		INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml
-		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-22:12
+		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-23:12
 		INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml
-		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-22:12
+		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:1-23:12
 		INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:2:11-69
@@ -55,7 +56,7 @@ ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/ap
 	android:name
 		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:4:22-64
 application
-ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:5:5-20:19
+ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:5:5-21:19
 MERGED from [com.android.support.constraint:constraint-layout:2.0.4] /Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/b337e05be148b267ebc15197590fb8ad/constraint-layout-2.0.4/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:2.0.4] /Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/b337e05be148b267ebc15197590fb8ad/constraint-layout-2.0.4/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:support-compat:28.0.0] /Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/06f6df44c76c4a181cad1895980d5a87/support-compat-28.0.0/AndroidManifest.xml:22:5-94
@@ -65,7 +66,7 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/odiljonergas
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] /Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/06f6df44c76c4a181cad1895980d5a87/support-compat-28.0.0/AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:10:9-35
+		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:11:9-35
 	android:label
 		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:8:9-41
 	android:roundIcon
@@ -75,27 +76,31 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/odiljonergas
 	android:allowBackup
 		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:12:9-53
+		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:13:9-53
 	android:networkSecurityConfig
-		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:11:9-69
+		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:12:9-69
+	android:usesCleartextTraffic
+		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:10:9-44
 activity#com.centerprime.hanpassethereum.MainActivity
-ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:13:9-19:20
+ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:13:19-47
+		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:14:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:14:13-18:29
+ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:15:17-69
+ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:15:25-66
+		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:17:17-77
+ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:17:27-74
+		ADDED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:18:27-74
 uses-sdk
 INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml
 INJECTED from /Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:multidex:1.0.2] /Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/225c52776102882fa2ab5534675e8d02/multidex-1.0.2/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] /Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/225c52776102882fa2ab5534675e8d02/multidex-1.0.2/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support.constraint:constraint-layout:2.0.4] /Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/b337e05be148b267ebc15197590fb8ad/constraint-layout-2.0.4/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:2.0.4] /Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/b337e05be148b267ebc15197590fb8ad/constraint-layout-2.0.4/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/odiljonergashev/.gradle/caches/transforms-2/files-2.1/eab914ae2b0ae69bba8b5cdf1163eae3/appcompat-v7-28.0.0/AndroidManifest.xml:20:5-44

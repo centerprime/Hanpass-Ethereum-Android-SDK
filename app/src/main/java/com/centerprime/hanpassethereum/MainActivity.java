@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                     error.printStackTrace();
                 });
 
-      ethManager .rewardTransfer("2021040116244001412955", "2021.04.06", "0.001", "KOR", "UZB", new EthManager.CallbackHanpass() {
+      ethManager.rewardTransfer("2021040116244001412955", "2021.04.06", "0.001", "USD","KOR", "UZB", new EthManager.CallbackHanpass() {
           @Override
           public void result(String result) {
               System.out.println(result);

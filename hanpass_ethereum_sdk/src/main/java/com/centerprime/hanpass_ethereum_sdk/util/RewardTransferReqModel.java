@@ -3,6 +3,7 @@ package com.centerprime.hanpass_ethereum_sdk.util;
 public class RewardTransferReqModel {
     private String token_key;
     private String date;
+    private String currency;
     private String amount;
     private String from_country;
     private String to_country;
@@ -13,6 +14,14 @@ public class RewardTransferReqModel {
 
     public void setToken_key(String token_key) {
         this.token_key = token_key;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     public String getDate() {
