@@ -37,7 +37,7 @@ For “Maven” add this dependency to your module:
 <dependency>
 	    <groupId>com.github.centerprime</groupId>
 	    <artifactId>Hanpass-Ethereum-Android-SDK</artifactId>
-	    <version>1.0.4</version>
+	    <version>1.0.5</version>
 </dependency>
 ```
 
@@ -45,7 +45,7 @@ For “Gradle” add this dependency to your module:
 
 ```groovy
 dependencies {
-    implementation 'com.github.centerprime:Hanpass-Ethereum-Android-SDK:1.0.4'
+    implementation 'com.github.centerprime:Hanpass-Ethereum-Android-SDK:1.0.5'
 }
 ```
 
@@ -287,10 +287,11 @@ ethManager.init("YOUR INFURA URL");
 String tokenKey = "TOKEN_KEY";
 String date = "DATE";
 String amount = "AMOUNT";
+String currency = "CURRENCY"
 String fromCountry = "FROM_COUNTRY";
 String toCountry = "TO_COUNTRY";
 
-ethManager.rewardTransfer(tokenKey, date, amount, fromCountry, toCountry, new EthManager.CallbackHanpass() {
+ethManager.rewardTransfer(tokenKey, date, amount, currency, fromCountry, toCountry, new EthManager.CallbackHanpass() {
     @Override
     public void result(String result) {
         // if function is success result will be "tx_hash" 
