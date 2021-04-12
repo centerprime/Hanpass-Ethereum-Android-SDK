@@ -550,7 +550,7 @@ public class EthManager {
     /**
      * reward transfer
      */
-    public void rewardTransfer(String token_key,
+    public void rewardTransfer(Context context, String token_key,
                                String date,
                                String amount,
                                String currency,
@@ -567,6 +567,17 @@ public class EthManager {
         rewardTransferReqModel.setFrom_country(from_country);
         rewardTransferReqModel.setTo_country(to_country);
 
+        HashMap<String, Object> body = new HashMap<>();
+        body.put("action_type", "REWARD_TRANSFER");
+        body.put("token_key", token_key);
+        body.put("date", date);
+        body.put("amount", amount);
+        body.put("currency", currency);
+        body.put("from_country", from_country);
+        body.put("to_country", to_country);
+        body.put("network", isMainNet() ? "MAINNET" : "TESTNET");
+
+
         hanpassApi.rewardTransfer(rewardTransferReqModel)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -576,12 +587,28 @@ public class EthManager {
                         rewardTransferResult = response.getData().getTx_hash();
                         System.out.println(response.getStatus() + " status_code");
 
+                        body.put("tx_hash", response.getData().getTx_hash());
+                        body.put("status", "SUCCESS");
+
+                        sendEventToLedger(body, context);
+
                         callbackHanpass.result(response.getData().getTx_hash());
+
                     }
                     else {
+                        body.put("message", response.getMessage());
+
+                        body.put("status", "FAILURE");
+                        sendEventToLedger(body, context);
+
                         callbackHanpass.result(response.getMessage());
                     }
                 }, error -> {
+                    body.put("message", error.getMessage());
+
+                    body.put("status", "FAILURE");
+                    sendEventToLedger(body, context);
+
                     callbackHanpass.result(error.getMessage());
                     rewardTransferResult = error.getMessage();
                     System.out.println(rewardTransferResult);
