@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         EthManager ethManager = EthManager.getInstance();
         ethManager.init("https://mainnet.infura.io/v3/a396c3461ac048a59f389c7778f06689");
         String password = "xxxx12345";
@@ -31,9 +30,5 @@ public class MainActivity extends AppCompatActivity {
                 }, error -> {
                     error.printStackTrace();
                 });
-
-
-
-
     }
 }

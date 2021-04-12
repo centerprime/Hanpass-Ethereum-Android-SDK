@@ -32,24 +32,25 @@
 21-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:9:9-54
 22        android:supportsRtl="true"
 22-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:11:9-35
-23        android:theme="@style/Theme.HanpassEthereum"
-23-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:13:9-53
-24        android:usesCleartextTraffic="true" >
-24-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:10:9-44
-25        <activity android:name="com.centerprime.hanpassethereum.MainActivity" >
-25-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:14:9-20:20
-25-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:14:19-47
-26            <intent-filter>
-26-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:15:13-19:29
-27                <action android:name="android.intent.action.MAIN" />
-27-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:16:17-69
-27-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:16:25-66
-28
-29                <category android:name="android.intent.category.LAUNCHER" />
-29-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:18:17-77
-29-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:18:27-74
-30            </intent-filter>
-31        </activity>
-32    </application>
-33
-34</manifest>
+23        android:testOnly="true"
+24        android:theme="@style/Theme.HanpassEthereum"
+24-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:13:9-53
+25        android:usesCleartextTraffic="true" >
+25-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:10:9-44
+26        <activity android:name="com.centerprime.hanpassethereum.MainActivity" >
+26-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:14:9-20:20
+26-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:14:19-47
+27            <intent-filter>
+27-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:15:13-19:29
+28                <action android:name="android.intent.action.MAIN" />
+28-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:16:17-69
+28-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:16:25-66
+29
+30                <category android:name="android.intent.category.LAUNCHER" />
+30-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:18:17-77
+30-->/Users/odiljonergashev/StudioProjects/Hanpass-Ethereum-Android-SDK/app/src/main/AndroidManifest.xml:18:27-74
+31            </intent-filter>
+32        </activity>
+33    </application>
+34
+35</manifest>
