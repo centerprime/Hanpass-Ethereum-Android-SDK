@@ -287,10 +287,11 @@ ethManager.init("YOUR INFURA URL");
 String tokenKey = "TOKEN_KEY";
 String date = "DATE";
 String amount = "AMOUNT";
+String currency = "CURRENCY"
 String fromCountry = "FROM_COUNTRY";
 String toCountry = "TO_COUNTRY";
 
-ethManager.rewardTransfer(tokenKey, date, amount, fromCountry, toCountry, new EthManager.CallbackHanpass() {
+ethManager.rewardTransfer(tokenKey, date, amount, currency, fromCountry, toCountry, new EthManager.CallbackHanpass() {
     @Override
     public void result(String result) {
         // if function is success result will be "tx_hash" 
