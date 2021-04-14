@@ -38,6 +38,16 @@ public class RewardTransferResponseModel {
     public class Data {
         @SerializedName("tx_hash")
         private String tx_hash;
+        @SerializedName("infura")
+        private String infura;
+
+        public String getInfura() {
+            return infura;
+        }
+
+        public void setInfura(String infura) {
+            this.infura = infura;
+        }
 
         public String getTx_hash() {
             return tx_hash;

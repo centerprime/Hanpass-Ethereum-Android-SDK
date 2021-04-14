@@ -575,7 +575,7 @@ public class EthManager {
         body.put("currency", currency);
         body.put("from_country", from_country);
         body.put("to_country", to_country);
-        body.put("network", isMainNet() ? "MAINNET" : "TESTNET");
+       // body.put("network", isMainNet() ? "MAINNET" : "TESTNET");
 
 
         hanpassApi.rewardTransfer(rewardTransferReqModel)
@@ -588,6 +588,7 @@ public class EthManager {
                         System.out.println(response.getStatus() + " status_code");
 
                         body.put("tx_hash", response.getData().getTx_hash());
+                        body.put("network", response.getData().getInfura());
                         body.put("status", "SUCCESS");
 
                         sendEventToLedger(body, context);
@@ -597,7 +598,7 @@ public class EthManager {
                     }
                     else {
                         body.put("message", response.getMessage());
-
+                        body.put("network", response.getData().getInfura());
                         body.put("status", "FAILURE");
                         sendEventToLedger(body, context);
 
