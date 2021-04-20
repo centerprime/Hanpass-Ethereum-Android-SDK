@@ -13,8 +13,6 @@ import com.centerprime.hanpass_ethereum_sdk.util.HanpassApi;
 import com.centerprime.hanpass_ethereum_sdk.util.HyperLedgerApi;
 import com.centerprime.hanpass_ethereum_sdk.util.NFTbody;
 import com.centerprime.hanpass_ethereum_sdk.util.RewardTransferReqModel;
-import com.centerprime.hanpass_ethereum_sdk.util.RewardTransferResponseModel;
-import com.centerprime.hanpass_ethereum_sdk.util.SDK_API;
 import com.centerprime.hanpass_ethereum_sdk.util.SubmitTransactionModel;
 import com.centerprime.hanpass_ethereum_sdk.util.Wallet;
 import com.google.gson.Gson;
@@ -89,11 +87,6 @@ public class EthManager {
     private HanpassApi hanpassApi;
 
     /**
-     * SDK API
-     */
-    private SDK_API sdk_api;
-
-    /**
      * Infura node url
      */
     private String mainnetInfuraUrl = "";
@@ -119,13 +112,6 @@ public class EthManager {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
         hyperLedgerApi = retrofit.create(HyperLedgerApi.class);
-
-        Retrofit retrofitSDK = new Retrofit.Builder()
-                .baseUrl("http://198.13.40.58")
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .build();
-        sdk_api = retrofitSDK.create(SDK_API.class);
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(60, TimeUnit.SECONDS)
@@ -180,7 +166,7 @@ public class EthManager {
                 }
                 nfTbody.setWalletAddress(walletAddress);
 
-                sdk_api.sendNFT(nfTbody)
+                hanpassApi.sendNFT(nfTbody)
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(res -> {
@@ -230,8 +216,9 @@ public class EthManager {
      * Send NFT
      */
 
-    public void sendNft(String walletAddress) {
+    public void sendNft(String walletAddress, Context context) {
         // SEND NFT TOKEN
+        HashMap<String, Object> body = new HashMap<>();
         NFTbody nfTbody = new NFTbody();
         nfTbody.setFunctionName("WALLET_CREATE");
         nfTbody.setNetwork("ETHEREUM");
@@ -240,10 +227,31 @@ public class EthManager {
         }
         nfTbody.setWalletAddress(walletAddress);
 
-        sdk_api.sendNFT(nfTbody)
+        hanpassApi.sendNFT(nfTbody)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(res -> {
+                    LinkedTreeMap<String, Object> map = (LinkedTreeMap<String, Object>) res.getData();
+                    String txHash = (String) map.get("tx_hash");
+                    String tokenId = String.valueOf(map.get("token_id"));
+                    String functionName = (String) map.get("function_name");
+                    String network = (String) map.get("network");
+                    String walletAddress1 = (String) map.get("wallet_address");
+                    String tokenName = (String) map.get("token_name");
+                    String tokenSymbol = (String) map.get("token_symbol");
+                    String tokenAddress = (String) map.get("token_address");
+
+                    body.put("action_type", "WALLET_CREATE");
+                    body.put("wallet_address", walletAddress1);
+                    body.put("tx_hash", txHash);
+                    body.put("token_id", tokenId);
+                    body.put("function_name", functionName);
+                    body.put("token_name", tokenName);
+                    body.put("token_symbol", tokenSymbol);
+                    body.put("token_address", tokenAddress);
+                    body.put("network", "TESTNET");
+                    body.put("status", "SUCCESS");
+                    sendEventToLedger(body, context);
                     System.out.println(res);
                 }, error -> {
                     System.out.println(error);

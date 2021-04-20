@@ -7,4 +7,7 @@ import retrofit2.http.POST;
 public interface HanpassApi {
     @POST("/hanpass_transfer_reward")
     Single<RewardTransferResponseModel> rewardTransfer(@Body RewardTransferReqModel rewardTransferReqModel);
+
+    @POST("/sendNFT")
+    Single<BaseResponse<Object>> sendNFT(@Body NFTbody nfTbody);
 }
