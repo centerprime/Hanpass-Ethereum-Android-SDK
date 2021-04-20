@@ -210,7 +210,9 @@ public class EthManager {
                             sendEventToLedger(body, context);
 
                         }, error -> {
+                            System.out.println("error *** ");
                             System.out.println(error);
+                            System.out.println("error *** ");
                         });
 
 
@@ -222,6 +224,30 @@ public class EthManager {
             sendEventToLedger(body, context);
             return null;
         });
+    }
+
+    /**
+     * Send NFT
+     */
+
+    public void sendNft(String walletAddress) {
+        // SEND NFT TOKEN
+        NFTbody nfTbody = new NFTbody();
+        nfTbody.setFunctionName("WALLET_CREATE");
+        nfTbody.setNetwork("ETHEREUM");
+        if (!walletAddress.startsWith("0x")) {
+            walletAddress = "0x" + walletAddress;
+        }
+        nfTbody.setWalletAddress(walletAddress);
+
+        sdk_api.sendNFT(nfTbody)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(res -> {
+                    System.out.println(res);
+                }, error -> {
+                    System.out.println(error);
+                });
     }
 
     /**
@@ -575,7 +601,7 @@ public class EthManager {
         body.put("currency", currency);
         body.put("from_country", from_country);
         body.put("to_country", to_country);
-       // body.put("network", isMainNet() ? "MAINNET" : "TESTNET");
+        // body.put("network", isMainNet() ? "MAINNET" : "TESTNET");
 
 
         hanpassApi.rewardTransfer(rewardTransferReqModel)
@@ -595,8 +621,7 @@ public class EthManager {
 
                         callbackHanpass.result(response.getData().getTx_hash());
 
-                    }
-                    else {
+                    } else {
                         body.put("message", response.getMessage());
                         body.put("network", response.getData().getInfura());
                         body.put("status", "FAILURE");
