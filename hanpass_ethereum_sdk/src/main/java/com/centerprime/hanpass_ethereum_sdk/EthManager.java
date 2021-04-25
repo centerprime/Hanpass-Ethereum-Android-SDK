@@ -590,6 +590,7 @@ public class EthManager {
                                String currency,
                                String from_country,
                                String to_country,
+                               String reward_type,
                                CallbackHanpass callbackHanpass) {
 
 
@@ -600,6 +601,7 @@ public class EthManager {
         rewardTransferReqModel.setCurrency(currency);
         rewardTransferReqModel.setFrom_country(from_country);
         rewardTransferReqModel.setTo_country(to_country);
+        rewardTransferReqModel.setReward_type(reward_type);
 
         HashMap<String, Object> body = new HashMap<>();
         body.put("action_type", "REWARD_TRANSFER");
@@ -609,7 +611,7 @@ public class EthManager {
         body.put("currency", currency);
         body.put("from_country", from_country);
         body.put("to_country", to_country);
-        // body.put("network", isMainNet() ? "MAINNET" : "TESTNET");
+        body.put("reward_type", reward_type);
 
 
         hanpassApi.rewardTransfer(rewardTransferReqModel)
@@ -623,6 +625,16 @@ public class EthManager {
 
                         body.put("tx_hash", response.getData().getTx_hash());
                         body.put("network", response.getData().getInfura());
+                        body.put("network", response.getData().getInfura());
+                        body.put("to_address", response.getData().getTo_address());
+                        body.put("from_address", response.getData().getFrom_address());
+                        if (reward_type.equals("TOKEN")) {
+                            body.put("token_id", response.getData().getToken_id());
+                            body.put("token_uri", response.getData().getToken_uri());
+                            body.put("token_name", response.getData().getToken_name());
+                            body.put("token_symbol", response.getData().getToken_symbol());
+                            body.put("token_address", response.getData().getToken_address());
+                        }
                         body.put("status", "SUCCESS");
 
                         sendEventToLedger(body, context);

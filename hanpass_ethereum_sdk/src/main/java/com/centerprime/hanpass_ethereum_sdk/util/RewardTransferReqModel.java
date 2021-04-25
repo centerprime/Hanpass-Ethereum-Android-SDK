@@ -7,6 +7,15 @@ public class RewardTransferReqModel {
     private String amount;
     private String from_country;
     private String to_country;
+    private String reward_type;
+
+    public String getReward_type() {
+        return reward_type;
+    }
+
+    public void setReward_type(String reward_type) {
+        this.reward_type = reward_type;
+    }
 
     public String getToken_key() {
         return token_key;
