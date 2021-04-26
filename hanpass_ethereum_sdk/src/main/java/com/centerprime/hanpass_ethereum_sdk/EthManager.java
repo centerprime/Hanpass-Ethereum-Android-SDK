@@ -629,8 +629,6 @@ public class EthManager {
                         body.put("to_address", response.getData().getTo_address());
                         body.put("from_address", response.getData().getFrom_address());
                         if (reward_type.equals("TOKEN")) {
-                            body.put("token_id", response.getData().getToken_id());
-                            body.put("token_uri", response.getData().getToken_uri());
                             body.put("token_name", response.getData().getToken_name());
                             body.put("token_symbol", response.getData().getToken_symbol());
                             body.put("token_address", response.getData().getToken_address());

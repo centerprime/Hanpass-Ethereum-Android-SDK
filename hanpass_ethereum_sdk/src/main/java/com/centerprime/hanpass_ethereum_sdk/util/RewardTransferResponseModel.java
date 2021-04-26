@@ -40,10 +40,8 @@ public class RewardTransferResponseModel {
         private String tx_hash;
         @SerializedName("infura")
         private String infura;
-        @SerializedName("token_id")
-        private String token_id;
-        @SerializedName("token_uri")
-        private String token_uri;
+
+
         @SerializedName("token_name")
         private String token_name;
         @SerializedName("token_symbol")
@@ -71,21 +69,6 @@ public class RewardTransferResponseModel {
             this.to_address = to_address;
         }
 
-        public String getToken_id() {
-            return token_id;
-        }
-
-        public void setToken_id(String token_id) {
-            this.token_id = token_id;
-        }
-
-        public String getToken_uri() {
-            return token_uri;
-        }
-
-        public void setToken_uri(String token_uri) {
-            this.token_uri = token_uri;
-        }
 
         public String getToken_name() {
             return token_name;

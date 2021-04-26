@@ -18,19 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
         EthManager ethManager = EthManager.getInstance();
         ethManager.init("https://mainnet.infura.io/v3/a396c3461ac048a59f389c7778f06689");
-        String password = "xxxx12345";
-        ethManager.createWallet(password, this)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(wallet -> {
-                    String walletAddress = wallet.getAddress();
-                    String keystore = wallet.getKeystore();
-                    Toast.makeText(this, wallet.getAddress(), Toast.LENGTH_SHORT).show();
-                    System.out.println("****************" + wallet.getAddress());
-                }, error -> {
-                    error.printStackTrace();
-                });
-
 
         ethManager.rewardTransfer(this,"2021040116244001412955",
                 "2021-04-19 12:08:52",
@@ -45,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
                         System.out.println(result);
                     }
                 });
-
-        ethManager.sendNft("0x4133b6deBf87961A729632A05ED8b7ae72C7081C", this);
     }
 
 }
