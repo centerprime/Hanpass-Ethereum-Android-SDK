@@ -290,8 +290,9 @@ String amount = "AMOUNT";
 String currency = "CURRENCY"
 String fromCountry = "FROM_COUNTRY";
 String toCountry = "TO_COUNTRY";
+String rewardType = "REWARD_TYPE"; 
 
-ethManager.rewardTransfer(tokenKey, date, amount, currency, fromCountry, toCountry, new EthManager.CallbackHanpass() {
+ethManager.rewardTransfer(tokenKey, date, amount, currency, fromCountry, toCountry, rewardType, new EthManager.CallbackHanpass() {
     @Override
     public void result(String result) {
         // if function is success result will be "tx_hash" 
